@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de568ce9f26c7a77081367d25be05720",
+    "content-hash": "1316bcb40d6e4bcfc2abd05ee4c989ae",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -3131,17 +3131,315 @@
             "time": "2021-11-28T15:25:38+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "phpstan/phpstan",
+            "version": "0.12.86",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "a84fdc53ecca7643dbc89ef8880d8b393a6c155a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a84fdc53ecca7643dbc89ef8880d8b393a6c155a",
+                "reference": "a84fdc53ecca7643dbc89ef8880d8b393a6c155a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.86"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-08T11:29:01+00:00"
+        },
+        {
+            "name": "rector/rector",
+            "version": "0.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector.git",
+                "reference": "9987c84c58d681149363a3e55f5e1c68df16c9f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/9987c84c58d681149363a3e55f5e1c68df16c9f6",
+                "reference": "9987c84c58d681149363a3e55f5e1c68df16c9f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0",
+                "phpstan/phpstan": "0.12.86"
+            },
+            "conflict": {
+                "phpstan/phpdoc-parser": "<=0.5.3",
+                "phpstan/phpstan": "<=0.12.82",
+                "rector/rector-prefixed": "*"
+            },
+            "bin": [
+                "bin/rector"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.10-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Prefixed and PHP 7.1 downgraded version of rector/rector",
+            "support": {
+                "issues": "https://github.com/rectorphp/rector/issues",
+                "source": "https://github.com/rectorphp/rector/tree/0.11.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-17T07:55:27+00:00"
+        },
+        {
+            "name": "rector/rector-doctrine",
+            "version": "0.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector-doctrine.git",
+                "reference": "aecc9c7a9d56870a3e3c59d81261e4cf32191f76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector-doctrine/zipball/aecc9c7a9d56870a3e3c59d81261e4cf32191f76",
+                "reference": "aecc9c7a9d56870a3e3c59d81261e4cf32191f76",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.16",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-webmozart-assert": "^1.2",
+                "phpunit/phpunit": "^10.3",
+                "rector/phpstan-rules": "^0.6",
+                "rector/rector-generator": "^0.7",
+                "rector/rector-src": "dev-main",
+                "symplify/easy-ci": "^11.2",
+                "symplify/easy-coding-standard": "^12.0",
+                "symplify/phpstan-extensions": "^11.2",
+                "symplify/phpstan-rules": "^11.1",
+                "symplify/rule-doc-generator": "^12.0",
+                "symplify/vendor-patches": "^11.2",
+                "tomasvotruba/class-leak": "^0.1",
+                "tomasvotruba/type-coverage": "^0.2",
+                "tomasvotruba/unused-public": "^0.3"
+            },
+            "type": "rector-extension",
+            "extra": {
+                "enable-patching": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rector\\Doctrine\\": [
+                        "src",
+                        "rules"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Rector upgrades rules for Doctrine",
+            "support": {
+                "issues": "https://github.com/rectorphp/rector-doctrine/issues",
+                "source": "https://github.com/rectorphp/rector-doctrine/tree/0.16.0"
+            },
+            "time": "2023-09-09T10:45:15+00:00"
+        },
+        {
+            "name": "rector/rector-phpunit",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector-phpunit.git",
+                "reference": "224e6484712ebade499f4501d7e698b4547bf8cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector-phpunit/zipball/224e6484712ebade499f4501d7e698b4547bf8cf",
+                "reference": "224e6484712ebade499f4501d7e698b4547bf8cf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "conflict": {
+                "rector/rector": "<0.11"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-webmozart-assert": "^1.2",
+                "phpunit/phpunit": "^10.5",
+                "rector/rector-src": "dev-main",
+                "rector/type-perfect": "^0.1.6",
+                "symplify/easy-coding-standard": "^12.3",
+                "symplify/phpstan-extensions": "^11.2",
+                "symplify/phpstan-rules": "^13.0",
+                "symplify/rule-doc-generator": "^12.0",
+                "symplify/vendor-patches": "^11.2",
+                "tomasvotruba/class-leak": "^0.2",
+                "tracy/tracy": "^2.10"
+            },
+            "type": "rector-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.11-dev"
+                },
+                "enable-patching": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rector\\PHPUnit\\": [
+                        "src",
+                        "rules"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Rector upgrades rules for PHPUnit",
+            "support": {
+                "issues": "https://github.com/rectorphp/rector-phpunit/issues",
+                "source": "https://github.com/rectorphp/rector-phpunit/tree/1.1.0"
+            },
+            "time": "2024-06-23T02:37:02+00:00"
+        },
+        {
+            "name": "rector/rector-symfony",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector-symfony.git",
+                "reference": "32e12bb564d7b36462490b79bfd87f0f3ec8de0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector-symfony/zipball/32e12bb564d7b36462490b79bfd87f0f3ec8de0c",
+                "reference": "32e12bb564d7b36462490b79bfd87f0f3ec8de0c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-webmozart-assert": "^1.2",
+                "phpunit/phpunit": "^10.5",
+                "rector/rector-src": "dev-main",
+                "rector/type-perfect": "^0.1.6",
+                "symfony/config": "^6.4",
+                "symfony/dependency-injection": "^6.4",
+                "symfony/http-kernel": "~6.3",
+                "symfony/routing": "^6.4",
+                "symfony/security-core": "^6.4",
+                "symfony/security-http": "^6.4",
+                "symfony/validator": "^6.4",
+                "symplify/easy-coding-standard": "^12.3",
+                "symplify/phpstan-extensions": "^11.1",
+                "symplify/phpstan-rules": "^13.0",
+                "symplify/rule-doc-generator": "^12.2.2",
+                "symplify/vendor-patches": "^11.2",
+                "tomasvotruba/class-leak": "^0.2",
+                "tracy/tracy": "^2.10"
+            },
+            "type": "rector-extension",
+            "extra": {
+                "enable-patching": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rector\\Symfony\\": [
+                        "src",
+                        "rules"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Rector upgrades rules for Symfony Framework",
+            "support": {
+                "issues": "https://github.com/rectorphp/rector-symfony/issues",
+                "source": "https://github.com/rectorphp/rector-symfony/tree/1.1.0"
+            },
+            "time": "2024-06-23T02:36:14+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4",
+        "php": ">=8.3",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
