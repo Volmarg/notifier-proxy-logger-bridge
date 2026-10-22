@@ -61,9 +61,6 @@
         }
     },
     "require-dev": {
-        "rector/rector": "^0.11.3",
-        "rector/rector-doctrine": "^0.16.0",
-        "rector/rector-phpunit": "^1.1",
-        "rector/rector-symfony": "^1.1"
+        "rector/rector": "v2.7.0"
     }
 }
