@@ -32,21 +32,15 @@ class NotifierProxyLoggerBridge
     /**
      * @var GuzzleHttpService $guzzleHttpService
      */
-    private GuzzleHttpService $guzzleHttpService;
-
-    /**
-     * @var string $baseUrl
-     */
-    private string $baseUrl;
+    private readonly GuzzleHttpService $guzzleHttpService;
 
     /**
      * @var Logger $logger
      */
-    private Logger $logger;
+    private readonly Logger $logger;
 
-    public function __construct(string $logFilePath, string $loggerName, string $baseUrl)
+    public function __construct(string $logFilePath, string $loggerName, private string $baseUrl)
     {
-        $this->baseUrl           = $baseUrl;
         $this->guzzleHttpService = new GuzzleHttpService();
         $this->logger            = new Logger($loggerName);
         $this->logger->pushHandler(new StreamHandler($logFilePath, Logger::DEBUG));
@@ -64,12 +58,9 @@ class NotifierProxyLoggerBridge
         $response = new InsertDiscordMessageResponse();
         try{
             $this->logCalledApiMethod($request);
-            {
-                $absoluteCalledUrl = $this->buildAbsoluteCalledUrlForRequest($request);
-                $guzzleResponse    = $this->guzzleHttpService->sendPostRequest($absoluteCalledUrl, $request->toArray());
-
-                $response->prefillBaseFieldsFromJsonString($guzzleResponse);
-            }
+            $absoluteCalledUrl = $this->buildAbsoluteCalledUrlForRequest($request);
+            $guzzleResponse    = $this->guzzleHttpService->sendPostRequest($absoluteCalledUrl, $request->toArray());
+            $response->prefillBaseFieldsFromJsonString($guzzleResponse);
             $this->logResponse($response);
         }catch(Exception | TypeError $e){
             $this->logThrowable($e);
@@ -103,12 +94,9 @@ class NotifierProxyLoggerBridge
             }
 
             $this->logCalledApiMethod($request);
-            {
-                $absoluteCalledUrl = $this->buildAbsoluteCalledUrlForRequest($request);
-                $guzzleResponse    = $this->guzzleHttpService->sendPostRequest($absoluteCalledUrl, $request->toArray());
-
-                $response->prefillBaseFieldsFromJsonString($guzzleResponse);
-            }
+            $absoluteCalledUrl = $this->buildAbsoluteCalledUrlForRequest($request);
+            $guzzleResponse    = $this->guzzleHttpService->sendPostRequest($absoluteCalledUrl, $request->toArray());
+            $response->prefillBaseFieldsFromJsonString($guzzleResponse);
             $this->logResponse($response);
         }catch(Exception | TypeError $e){
             $this->logThrowable($e);
@@ -130,12 +118,9 @@ class NotifierProxyLoggerBridge
         $response = new GetMailStatusResponse();
         try{
             $this->logCalledApiMethod($request);
-            {
-                $absoluteCalledUrl = $this->buildAbsoluteCalledUrlForRequest($request);
-                $guzzleResponse    = $this->guzzleHttpService->sendGetRequest($absoluteCalledUrl);
-
-                $response->prefillBaseFieldsFromJsonString($guzzleResponse);
-            }
+            $absoluteCalledUrl = $this->buildAbsoluteCalledUrlForRequest($request);
+            $guzzleResponse    = $this->guzzleHttpService->sendGetRequest($absoluteCalledUrl);
+            $response->prefillBaseFieldsFromJsonString($guzzleResponse);
             $this->logResponse($response);
         }catch(Exception | TypeError $e){
             $this->logThrowable($e);

@@ -12,7 +12,7 @@ class GuzzleHttpService
     /**
      * @var Client $client
      */
-    private Client $client;
+    private readonly Client $client;
 
     public function __construct()
     {

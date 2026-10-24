@@ -10,8 +10,8 @@ use App\Request\BaseRequest;
  */
 class GetMailStatusRequest extends BaseRequest
 {
-    private const REQUEST_URI  = "/api/external/mailing/get-mail-status/{id}";
-    private const URI_PARAM_ID = "{id}";
+    private const string REQUEST_URI  = "/api/external/mailing/get-mail-status/{id}";
+    private const string URI_PARAM_ID = "{id}";
 
     /**
      * @var string $requestUri
