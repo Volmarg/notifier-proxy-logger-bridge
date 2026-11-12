@@ -12,7 +12,7 @@ use App\Response\BaseResponse;
  */
 class InsertMailResponse extends BaseResponse
 {
-    private const KEY_ID = "id";
+    private const string KEY_ID = "id";
 
     /**
      * @var int $id

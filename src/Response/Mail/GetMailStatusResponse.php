@@ -12,11 +12,11 @@ use App\Response\BaseResponse;
  */
 class GetMailStatusResponse extends BaseResponse
 {
-    private const STATUS_SENT    = "SENT";
-    private const STATUS_PENDING = "PENDING";
-    private const STATUS_ERROR   = "ERROR";
+    private const string STATUS_SENT    = "SENT";
+    private const string STATUS_PENDING = "PENDING";
+    private const string STATUS_ERROR   = "ERROR";
 
-    private const KEY_STATUS = "status";
+    private const string KEY_STATUS = "status";
 
     /**
      * @var string $status

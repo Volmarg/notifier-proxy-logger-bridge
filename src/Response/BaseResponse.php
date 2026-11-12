@@ -109,7 +109,6 @@ class BaseResponse
      *
      * @param string $searchedKey
      * @param array $arrayToSearchIn
-     * @param null $defaultReturnedValue
      * @return mixed|null
      */
     public function getArrayValueByKey(string $searchedKey, array $arrayToSearchIn, $defaultReturnedValue = null)
